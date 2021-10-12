@@ -7,6 +7,7 @@ verify_ssl = true
 
 [packages]
 googletrans = "==4.0.0rc1"
+art = "*"
 
 [requires]
 python_version = "3.7"

@@ -27,6 +27,10 @@ Test out the translations:
 * `python cli.py -t "Good morning" -s "en" -d "es"`
 * `python cli.py -t "Good afternoon" -s "en" -d "fr"`
 
+## Accessing files from GCS Bucket
+* You can download a file from GCS using `https://storage.googleapis.com/ac215-d/tips.md` (path of file in GCS)
+* You can upload a file to GCS using `curl --upload-file tips2.md https://storage.googleapis.com/ac215-d/` (provided you have write access)
+
 ## Running App on VM using Docker
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
@@ -81,10 +85,5 @@ To exit from container
 * Tag the Docker Image: `docker tag simple-translate <USER NAME>/simple-translate`
 * Push to Docker Hub: `docker push <USER NAME>/simple-translate`
 
-
-
-## Accessing files from GCS Bucket
-* You can download a file from GCS using `https://storage.googleapis.com/ac215-d/tips.md` (path of file in GCS)
-* You can upload a file to GCS using `curl --upload-file tips2.md https://storage.googleapis.com/ac215-d/` (provided you have write access)
 
 

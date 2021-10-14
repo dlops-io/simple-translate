@@ -1,5 +1,31 @@
 # Simple Translate App
 
+## Installing App on VM Manually
+* Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
+* SSH into your newly created instance
+* Install Git: `sudo apt install git`
+* Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
+* `cd simple-translate`
+* Install Python: `sudo apt install python3-pip`
+* Install packages: `pip3 install googletrans==4.0.0rc1`
+Test out the translations:
+* `python3 cli.py`
+* `python3 cli.py -t "Good morning" -s "en" -d "es"`
+* `python3 cli.py -t "Good afternoon" -s "en" -d "fr"`
+
+## Installing App on VM using Pipenv
+* Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
+* SSH into your newly created instance
+* Install Git: `sudo apt install git`
+* Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
+* `cd simple-translate`
+* Install Pipenv: `sudo apt install pipenv`
+* Install Pipenv environment from Pipfile: `pipenv install`
+* Go into the newly created environment shell: `pipenv shell`
+Test out the translations:
+* `python cli.py`
+* `python cli.py -t "Good morning" -s "en" -d "es"`
+* `python cli.py -t "Good afternoon" -s "en" -d "fr"`
 
 ## Running App on VM using Docker
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)

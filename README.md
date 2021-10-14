@@ -1,10 +1,5 @@
 # Simple Translate App
 
-## Installing App on VM Manually
-
-
-## Installing App on VM using Pipenv
-
 
 ## Installing App using Containers
 

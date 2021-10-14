@@ -51,7 +51,13 @@ To exit from container
 ### Installing App on VM using Docker
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
-* 
+Install Docker on the newly created instance by running
+* `curl -fsSL https://get.docker.com -o get-docker.sh`
+* `sudo sh get-docker.sh`
+Check version of installed Docker
+* `sudo docker --version`
+Run the app using Docker
+* `sudo docker run --rm -ti dlops/simple-translate`
 
 
 

@@ -52,7 +52,7 @@ Run the app using Docker
 Follow the [instructions](https://code.visualstudio.com/download) for your operating system.  
 If you already have a preferred text editor, skip this step.  
 
-## Make sure we do not have any running containers and clear up an unused images
+### Make sure we do not have any running containers and clear up an unused images
 * Run `docker container ls`
 * Stop any container that is running
 * Run `docker system prune`
@@ -83,5 +83,8 @@ To exit from container
 
 
 
+## Accessing files from GCS Bucket
+* You can download a file from GCS using `https://storage.googleapis.com/ac215-d/tips.md` (path of file in GCS)
+* You can upload a file to GCS using `curl --upload-file tips2.md https://storage.googleapis.com/ac215-d/` (provided you have write access)
 
 

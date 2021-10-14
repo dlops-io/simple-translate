@@ -41,17 +41,12 @@ Run the app using Docker
 ## Developing App using Containers
 
 ### Prerequisites for Development using Containers
-* Have Docker installed
+* Have Docker Desktop installed
 * Cloned this repository to your local machine with a terminal up and running
 * Check that your Docker is running with the following command
 
 `docker run hello-world`
 
-### Install Docker 
-Install `Docker Desktop`
-
-### Ensure Docker Memory
-- To make sure we can run multiple container go to Docker>Preferences>Resources and in "Memory" make sure you have selected > 4GB
 
 ### Install VSCode  
 Follow the [instructions](https://code.visualstudio.com/download) for your operating system.  

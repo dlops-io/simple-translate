@@ -1,7 +1,18 @@
 # Simple Translate App
 
 
-## Installing App using Containers
+## Running App on VM using Docker
+* Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
+* SSH into your newly created instance
+Install Docker on the newly created instance by running
+* `curl -fsSL https://get.docker.com -o get-docker.sh`
+* `sudo sh get-docker.sh`
+Check version of installed Docker
+* `sudo docker --version`
+Run the app using Docker
+* `sudo docker run --rm -ti dlops/simple-translate`
+
+## Developing App using Containers
 
 ### Prerequisites for Development using Containers
 * Have Docker installed
@@ -48,16 +59,8 @@ To exit from container
 * Login to the Hub: `docker login -u <USER NAME> -p <ACCESS TOKEN>`
 * Tag the Docker Image: `docker tag simple-translate <USER NAME>/simple-translate`
 * Push to Docker Hub: `docker push <USER NAME>/simple-translate`
-### Installing App on VM using Docker
-* Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
-* SSH into your newly created instance
-Install Docker on the newly created instance by running
-* `curl -fsSL https://get.docker.com -o get-docker.sh`
-* `sudo sh get-docker.sh`
-Check version of installed Docker
-* `sudo docker --version`
-Run the app using Docker
-* `sudo docker run --rm -ti dlops/simple-translate`
+
+
 
 
 

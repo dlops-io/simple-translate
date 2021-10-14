@@ -13,8 +13,16 @@ translator = Translator()
 def main(args=None):
 
     print("Args:", args)
+    text = args.text
 
-    results = translator.translate(args.text, src=args.src, dest=args.dest)
+    if args.file != "":
+        # read file
+        with open(args.file) as f:
+            text = f.read()
+
+    print(text)
+
+    results = translator.translate(text, src=args.src, dest=args.dest)
 
     print(results.text)
 
@@ -27,6 +35,8 @@ if __name__ == "__main__":
 
     parser.add_argument("-t", "--text", type=str, default="Hello",
                         help="Text to translate")
+    parser.add_argument("-f", "--file", type=str, default="",
+                        help="File to translate")
     parser.add_argument("-s", "--src", default="en",
                         help="Source Language")
     parser.add_argument("-d", "--dest", default="ja",

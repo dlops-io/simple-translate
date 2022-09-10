@@ -1,3 +1,4 @@
-Welcome to AC215: Advanced practical data science, MLOps.
-This course aims to review existing Deep Learning flow while applying it to a real-world problem. Then we will build and deploy an application that uses the deep learning model to understand how to productionize models. This course follows the CS109 model of balancing between concept, theory, and implementation.
-Split into three parts; the course starts with the review of Deep Learning concepts for data and modeling and how to apply them to different tasks, including vision and language tasks. The next part will be Development, where you use the models you trained in part 1 and incorporate them into real-world applications. Finally, you will Deploy the application in Google Cloud Platform (GCP). The three parts will cover in detail topics such as Transfer learning, Containerization using Docker, and Scaling deployments using Kubernetes.
+Welcome to AI5: Productionizing AI (MLOps)
+This course aims to review existing Deep Learning flow while applying it to a real-world problem. Then we will build and deploy an application that uses the deep learning model to understand how to productionize models. This course follows the Univ.AI model of balancing between concept, theory, and implementation.
+
+At the end of this course, you will build efficient models and design, build and deploy applications that scale.

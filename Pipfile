@@ -10,4 +10,4 @@ googletrans = "==4.0.0rc1"
 art = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.9"

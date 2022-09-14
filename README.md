@@ -31,10 +31,6 @@ Test out the translations:
 
 Refer to language codes at the bottom of this page.
 
-## Accessing files from GCS Bucket
-* You can download a file from GCS using `https://storage.googleapis.com/ac215-d/tips.md` (path of file in GCS)
-* You can upload a file to GCS using `curl --upload-file tips2.md https://storage.googleapis.com/ac215-d/` (provided you have write access)
-
 ## Running App on VM using Docker
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
@@ -156,3 +152,6 @@ To exit from container
 
 
 
+## Accessing files from GCS Bucket
+* You can download a file from GCS using `https://storage.googleapis.com/ai5-c3-bucket/tips.md` (path of file in GCS)
+* You can upload a file to GCS using `curl --upload-file tips2.md https://storage.googleapis.com/ai5-c3-bucket/` (provided you have write access)

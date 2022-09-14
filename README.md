@@ -36,9 +36,9 @@ Refer to language codes at the bottom of this page.
 * SSH into your newly created instance
 Install Docker on the newly created instance by running
 * `curl -fsSL https://get.docker.com -o get-docker.sh`
-* `sudo sh get-docker.sh`
+* `sudo sh get-docker.sh`  
 Check version of installed Docker
-* `sudo docker --version`
+* `sudo docker --version`  
 Run the app using Docker
 * `sudo docker run --rm -ti dlops/simple-translate`
 

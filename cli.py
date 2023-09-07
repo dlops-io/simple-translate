@@ -13,7 +13,7 @@ translator = Translator()
 
 def main(args=None):
     print("\n")
-    art = text2art("AC215 : Productionizing AI (MLOps)")
+    art = text2art("AC215")
     print(art)
     print("\n")
     print("Arguments:", args)

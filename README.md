@@ -3,6 +3,7 @@
 ## Installing App on VM Manually
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
+* Update OS packages: `sudo apt-get update`
 * Install Git: `sudo apt install git`
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`

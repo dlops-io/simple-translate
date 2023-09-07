@@ -8,7 +8,7 @@
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`
 * Install Python: `sudo apt install python3-pip`
-* Install packages: `pip3 install googletrans==4.0.0rc1`
+* Install packages: `pip3 install googletrans==4.0.0rc1 art`
 Test out the translations:
 * `python3 cli.py`
 * `python3 cli.py -t "Good morning" -s "en" -d "es"`

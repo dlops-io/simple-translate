@@ -155,5 +155,5 @@ To exit from container
 
 
 ## Accessing files from GCS Bucket
-* You can download a file from GCS using `https://storage.googleapis.com/ai5-c3-bucket/tips.md` (path of file in GCS)
-* You can upload a file to GCS using `curl --upload-file tips2.md https://storage.googleapis.com/ai5-c3-bucket/` (provided you have write access)
+* You can download a file from GCS using `https://storage.googleapis.com/ac215-test-bucket/tips.txt` (path of file in GCS)
+* You can upload a file to GCS using `curl --upload-file tips2.md https://storage.googleapis.com/ac215-test-bucket/` (provided you have write access)

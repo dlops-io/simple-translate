@@ -87,6 +87,12 @@ To exit from container
 * Tag the Docker Image: `docker tag simple-translate <USER NAME>/simple-translate`
 * Push to Docker Hub: `docker push <USER NAME>/simple-translate`
 
+
+## Running App as Cloud Function
+* In GCP go to [Cloud Functions](https://console.cloud.google.com/functions)
+* 
+
+
 ## Google Translate Two-Letter Language Codes
 <table border="1">
 <tbody>

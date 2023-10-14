@@ -93,7 +93,7 @@ To exit from container
 * Click the "+ CREATE FUNCTION" button
 * If you have not enabled the required APIs, a popup will showup as shown
 
-<img src="images/cloud-function-enable-apis.pngg"  width="500">
+<img src="images/cloud-function-enable-apis.png"  width="500">
 
 * Enable the required APIs. Click "ENABLE"
 

@@ -89,6 +89,8 @@ To exit from container
 
 
 ## Running App as Cloud Function
+
+### Setup Cloud Function
 * In GCP go to [Cloud Functions](https://console.cloud.google.com/functions)
 * Click the "+ CREATE FUNCTION" button
 * If you have not enabled the required APIs, a popup will showup as shown
@@ -96,6 +98,59 @@ To exit from container
 <img src="images/cloud-function-enable-apis.png"  width="500">
 
 * Enable the required APIs. Click "ENABLE"
+
+### Create a Cloud Function
+* In the Create Cloud Function screen
+* Under the Configuration -> "Basics" section. Keep everything the default.
+* Under the Configuration -> "Trigger" section. Select "Allow unauthenticated invocations"
+* Click "NEXT" button at the bottom
+* Under the Code -> "Runtime", select "Python 3.10"
+* Replace the code in `main.py` with the following:
+```
+import functions_framework
+from googletrans import Translator
+
+@functions_framework.http
+def hello_http(request):
+    """HTTP Cloud Function.
+    Args:
+        request (flask.Request): The request object.
+        <https://flask.palletsprojects.com/en/1.1.x/api/#incoming-request-data>
+    Returns:
+        The response text, or any set of values that can be turned into a
+        Response object using `make_response`
+        <https://flask.palletsprojects.com/en/1.1.x/api/#flask.make_response>.
+    """
+    request_json = request.get_json(silent=True)
+    request_args = request.args
+
+    print("request_json:", request_json)
+    print("request_args:", request_args)
+
+    translator = Translator()
+
+    text = "Welcome to AC215"
+    src = "en"
+    dest = "es"
+    if request_args and 'text' in request_args:
+        text = request_args['text']
+    if request_args and 'src' in request_args:
+        src = request_args['src']
+    if request_args and 'dest' in request_args:
+        dest = request_args['dest']
+    
+    results = translator.translate(text, src=src, dest=dest)
+    print("Output:", results.text)
+    
+
+    return results.text
+```
+
+* Replace the content of `requirements.txt` with the following:
+```
+functions-framework==3.*
+googletrans==4.0.0rc1
+```
 
 
 

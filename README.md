@@ -152,6 +152,19 @@ functions-framework==3.*
 googletrans==4.0.0rc1
 ```
 
+* Click on "DEPLOY" to deploy the code as a CLoud Function
+* Deployment will take a few minutes to complete
+
+### Test Cloud Function
+
+* Get the URL of the Cloud Function from the function details page
+* The endpoint should looks like: `https://us-central1-ac215-project.cloudfunctions.net/simple-translate` 
+* Test the URL by going to your [Endpoint URL](https://us-central1-ac215-project.cloudfunctions.net/simple-translate)
+* Add some parameters and  test again with:
+    - text="Good afternoon everyone" src=en dest=fr [Endpoint URL](https://us-central1-ac215-project.cloudfunctions.net/simple-translate?text=Good afternoon everyone&src=en&dest=fr)
+    - text="Very cool concept" src=en dest=el [Endpoint URL](https://us-central1-ac215-project.cloudfunctions.net/simple-translate?text=Very cool concept&src=en&dest=el)
+    - text="Ready to go home?" src=en dest=hi [Endpoint URL](https://us-central1-ac215-project.cloudfunctions.net/simple-translate?text=Ready to go home?&src=en&dest=hi)
+
 
 
 ## Google Translate Two-Letter Language Codes

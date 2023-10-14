@@ -90,7 +90,13 @@ To exit from container
 
 ## Running App as Cloud Function
 * In GCP go to [Cloud Functions](https://console.cloud.google.com/functions)
-* 
+* Click the "+ CREATE FUNCTION" button
+* If you have not enabled the required APIs, a popup will showup as shown
+
+<img src="images/cloud-function-enable-apis.pngg"  width="500">
+
+* Enable the required APIs. Click "ENABLE"
+
 
 
 ## Google Translate Two-Letter Language Codes

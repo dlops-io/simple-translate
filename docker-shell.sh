@@ -9,7 +9,7 @@ export BASE_DIR=$(pwd)
 
 # Build the image based on the Dockerfile
 #docker build -t $IMAGE_NAME -f Dockerfile .
-docker build -t $IMAGE_NAME --platform=linux/amd64/v3 -f Dockerfile .
+docker build -t $IMAGE_NAME --platform=linux/amd64 -f Dockerfile .
 
 # Run the container
 docker run --rm --name $IMAGE_NAME -ti \

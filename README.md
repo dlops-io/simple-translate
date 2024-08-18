@@ -11,8 +11,8 @@
 * Install packages: `pip3 install googletrans==4.0.0rc1 art`
 Test out the translations:
 * `python3 cli.py`
-* `python3 cli.py -t "Good morning" -s "en" -d "es"`
-* `python3 cli.py -t "Good afternoon" -s "en" -d "fr"`
+* `python3 cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
+* `python3 cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`
 
 Refer to language codes at the bottom of this page.
 
@@ -31,8 +31,8 @@ Refer to language codes at the bottom of this page.
 * Go into the newly created environment shell: `pipenv shell`
 Test out the translations:
 * `python cli.py`
-* `python cli.py -t "Good morning" -s "en" -d "es"`
-* `python cli.py -t "Good afternoon" -s "en" -d "fr"`
+* `python cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
+* `python cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`
 
 Refer to language codes at the bottom of this page.
 

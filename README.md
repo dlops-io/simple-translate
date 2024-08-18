@@ -1,6 +1,6 @@
 # Simple Translate App
 
-## Installing App on VM Manually
+## Installing App on VM Manually (L2)
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 * Update OS packages: `sudo apt-get update`
@@ -16,7 +16,10 @@ Test out the translations:
 
 Refer to language codes at the bottom of this page.
 
-## Installing App on VM using Pipenv
+---
+---
+
+## Installing App on VM using Pipenv (L2)
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 * Update OS packages: `sudo apt-get update`
@@ -33,7 +36,12 @@ Test out the translations:
 
 Refer to language codes at the bottom of this page.
 
-## Running App on VM using Docker
+---
+---
+
+
+## Running App on VM using Docker (L3)
+
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 Install Docker on the newly created instance by running

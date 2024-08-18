@@ -38,11 +38,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A simple translation app")
 
     parser.add_argument(
-        "-t", "--text", type=str, default="Hello", help="Text to translate"
+        "-t", "--text", type=str, default="I love cheese", help="Text to translate"
     )
     parser.add_argument("-f", "--file", type=str, default="", help="File to translate")
     parser.add_argument("-s", "--src", default="en", help="Source Language")
-    parser.add_argument("-d", "--dest", default="ja", help="Destination Language")
+    parser.add_argument("-d", "--dest", default="it", help="Destination Language")
 
     args = parser.parse_args()
 

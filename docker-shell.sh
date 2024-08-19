@@ -12,5 +12,4 @@ export BASE_DIR=$(pwd)
 docker build -t $IMAGE_NAME --platform=linux/amd64 -f Dockerfile .
 
 # Run the container
-docker run --rm --name $IMAGE_NAME -ti \
-$IMAGE_NAME
+docker run --rm --name $IMAGE_NAME -ti $IMAGE_NAME

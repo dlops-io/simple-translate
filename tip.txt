@@ -1,4 +1,4 @@
 Welcome to AC215: Productionizing AI (MLOps)
-This course aims to review existing Deep Learning flow while applying it to a real-world problem. Then we will build and deploy an application that uses the deep learning model to understand how to productionize models. This course follows the Univ.AI model of balancing between concept, theory, and implementation.
+This course aims to review existing Deep Learning flow while applying it to a real-world problem. Then we will build and deploy an application that uses the deep learning model to understand how to productionize models. 
 
 At the end of this course, you will build efficient models and design, build and deploy applications that scale.

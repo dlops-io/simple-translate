@@ -106,8 +106,7 @@ Run the container using:
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 Install Docker on the newly created instance by running
-* `curl -fsSL https://get.docker.com -o get-docker.sh`
-* `sudo sh get-docker.sh`  
+* `sudo apt install docker.io`
 
 Check version of installed Docker
 * `sudo docker --version`  

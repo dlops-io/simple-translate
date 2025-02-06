@@ -88,8 +88,8 @@ Run the container using:
 
 * Sign up in Docker Hub and create an [Access Token](https://hub.docker.com/settings/security)
 * Login to the Hub: `docker login -u <USER NAME> -p <ACCESS TOKEN>`
-* Tag the Docker Image: `docker tag simple-translate <USER NAME>/simple-translate`
-* Push to Docker Hub: `docker push <USER NAME>/simple-translate`
+* Tag the Docker Image: `docker tag simple-translate <USER NAME>/simple-translate-e115`
+* Push to Docker Hub: `docker push <USER NAME>/simple-translate-e115`
 
 
 
@@ -111,7 +111,7 @@ Install Docker on the newly created instance by running
 Check version of installed Docker
 * `sudo docker --version`  
 Run the app using Docker
-* `sudo docker run --rm -ti dlops/simple-translate`
+* `sudo docker run --rm -ti dlops/simple-translate-e115`
 
 Run the cli
 * `python cli.py`

@@ -19,16 +19,16 @@ Refer to language codes at the bottom of this page.
 ---
 ---
 
-## Installing App on VM using Pipenv (T2)
+## Installing App on VM using UV (T2)
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 * Update OS packages: `sudo apt-get update`
 * Install Git: `sudo apt install git`
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`
-* Install Pipenv: `sudo apt install pipenv`
-* Install Pipenv environment from Pipfile: `pipenv install`
-* Go into the newly created environment shell: `pipenv shell`
+* Install uv: `sudo apt install uv`
+* Install python environment from pyproject.toml: `uv sync`
+* Go into the newly created environment shell: `uv run`
 Test out the translations:
 * `python cli.py`
 * `python cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`

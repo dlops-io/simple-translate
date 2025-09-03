@@ -28,8 +28,9 @@ Refer to language codes at the bottom of this page.
 * `cd simple-translate`
 * Install Python PIP: `sudo apt install python3-pip`
 * Install uv: `pip3 install --break-system-packages uv` (The --break-system-packages option is to allow us to install packages to the base python in the OS)
+* Reload your shell or run: `source $HOME/.local/bin/env`
 * Install python environment from pyproject.toml: `uv sync`
-* Go into the newly created environment shell: `uv run`
+* Activate the newly created environment: `source .venv/bin/activate`
 Test out the translations:
 * `python cli.py`
 * `python cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`

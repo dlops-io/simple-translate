@@ -7,8 +7,8 @@
 * Install Git: `sudo apt install git`
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`
-* Install Python: `sudo apt install python3-pip`
-* Install packages: `pip3 install --break-system-packages googletrans==4.0.0rc1 art`
+* Install Python PIP: `sudo apt install python3-pip`
+* Install packages: `pip3 install --break-system-packages googletrans==4.0.0rc1 art` (The --break-system-packages option is to allow us to install packages to the base python in the OS)
 Test out the translations:
 * `python3 cli.py`
 * `python3 cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
@@ -26,7 +26,8 @@ Refer to language codes at the bottom of this page.
 * Install Git: `sudo apt install git`
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`
-* Install uv: `sudo apt install uv`
+* Install Python PIP: `sudo apt install python3-pip`
+* Install uv: `pip3 install --break-system-packages uv` (The --break-system-packages option is to allow us to install packages to the base python in the OS)
 * Install python environment from pyproject.toml: `uv sync`
 * Go into the newly created environment shell: `uv run`
 Test out the translations:

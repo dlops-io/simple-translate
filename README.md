@@ -30,7 +30,7 @@ Refer to language codes at the bottom of this page.
 * Reload your shell or run: `source $HOME/.local/bin/env`
 * Install python environment from pyproject.toml: `uv sync`
 * Activate the newly created environment: `source .venv/bin/activate`
-Test out the translations:
+* Test out the translations:
 * `python cli.py`
 * `python cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
 * `python cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`

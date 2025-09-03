@@ -26,8 +26,7 @@ Refer to language codes at the bottom of this page.
 * Install Git: `sudo apt install git`
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`
-* Install Python PIP: `sudo apt install python3-pip`
-* Install uv: `pip3 install --break-system-packages uv` (The --break-system-packages option is to allow us to install packages to the base python in the OS)
+* Install uv: `curl -LsSf https://astral.sh/uv/install.sh | sh`
 * Reload your shell or run: `source $HOME/.local/bin/env`
 * Install python environment from pyproject.toml: `uv sync`
 * Activate the newly created environment: `source .venv/bin/activate`

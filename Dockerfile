@@ -41,5 +41,6 @@ COPY --chown=app:app . ./
 RUN uv sync
 
 # Entry point
-ENTRYPOINT ["uv", "run"]
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
+# Get into the uv virtual environment shell
+CMD ["-c", "source /home/app/.venv/bin/activate && exec bash"]

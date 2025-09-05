@@ -112,7 +112,7 @@ Install Docker on the newly created instance by running
 Check version of installed Docker
 * `sudo docker --version`  
 Run the app using Docker
-* `sudo docker run --rm -ti dlops/simple-translate-e115`
+* `sudo docker run --rm -ti dlops/simple-translate`
 
 Run the cli
 * `python cli.py`

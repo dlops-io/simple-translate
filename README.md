@@ -51,7 +51,7 @@ Refer to language codes at the bottom of this page.
 `docker run hello-world`
 
 
-### Install VSCode  
+### Install VSCode or IDE of choice
 
 Follow the [instructions](https://code.visualstudio.com/download) for your operating system.  
 If you already have a preferred text editor, skip this step.  
@@ -89,8 +89,8 @@ Run the container using:
 
 * Sign up in Docker Hub and create an [Access Token](https://hub.docker.com/settings/security)
 * Login to the Hub: `docker login -u <USER NAME> -p <ACCESS TOKEN>`
-* Tag the Docker Image: `docker tag simple-translate <USER NAME>/simple-translate-e115`
-* Push to Docker Hub: `docker push <USER NAME>/simple-translate-e115`
+* Tag the Docker Image: `docker tag simple-translate <USER NAME>/simple-translate-ac215`
+* Push to Docker Hub: `docker push <USER NAME>/simple-translate-ac215`
 
 
 

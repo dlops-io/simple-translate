@@ -26,4 +26,4 @@ RUN uv sync
 # Entry point
 ENTRYPOINT ["/bin/bash"]
 # Get into the uv virtual environment shell
-CMD ["-c", "source source .venv/bin/activate && exec bash"]
+CMD ["-c", "source .venv/bin/activate && exec bash"]

@@ -70,7 +70,8 @@ If you already have a preferred text editor, skip this step.
 ### Create Dockerfile
 * Inside the `simple-translate` folder create a file called `Dockerfile`
 
-* Follow these steps to create a  `Dockerfile`:
+* Follow these steps to create a  `Dockerfile` step by step (Do a Build + Run after each step):
+
 **Step 1:**
 We want to base our docker image from `python:3.12-slim-bookworm` the official Debian-hosted Python 3.12 image
 ```
@@ -79,6 +80,35 @@ FROM python:3.12-slim-bookworm
 ```
 
 **Step 2:**
+Add Entry point to `/bin/bash`
+```
+ENTRYPOINT [“/bin/bash”]
+```
+
+**Step 3:**
+Install uv & copy source code into the container
+```
+# Install uv
+RUN pip install uv
+# Copy the source code
+COPY . ./
+```
+
+**Step 4:**
+Setup a virtual environment by running uv sync
+```
+RUN uv sync
+```
+
+**Step 5:**
+Automatically get into the virtual environment shell on startup
+```
+# Get into the uv virtual environment shell
+CMD [“-c”, “source .venv/bin/activate && exec bash”]
+```
+
+**Solution Dockerfile:**
+`Dockerfile.txt`
 
 ### Build Docker Image
 

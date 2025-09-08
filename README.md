@@ -67,15 +67,26 @@ If you already have a preferred text editor, skip this step.
 
 - Clone or download from [here](https://github.com/dlops-io/simple-translate)
 
-### Building Docker Image
+### Create Dockerfile
+* Inside the `simple-translate` folder create a file called `Dockerfile`
 
-Go into the app folder by running
+* Follow these steps to create a  `Dockerfile`:
+**Step 1:**
+We want to base our docker image from `python:3.12-slim-bookworm` the official Debian-hosted Python 3.12 image
+```
+# Use the official Debian-hosted Python image
+FROM python:3.12-slim-bookworm
+```
 
-* `cd simple-translate`
+**Step 2:**
+
+### Build Docker Image
+
+* In a terminal make sure you are the location of `simple-translate`
   Build the docker container by running
 * `docker build -t simple-translate -f Dockerfile .`
 
-### Running Docker Container
+### Run Docker Container
 
 Run the container using:
 

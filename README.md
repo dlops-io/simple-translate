@@ -82,7 +82,7 @@ FROM python:3.12-slim-bookworm
 **Step 2:**
 Add Entry point to `/bin/bash`
 ```
-ENTRYPOINT [“/bin/bash”]
+ENTRYPOINT ["/bin/bash"]
 ```
 
 **Step 3:**
@@ -104,7 +104,7 @@ RUN uv sync
 Automatically get into the virtual environment shell on startup
 ```
 # Get into the uv virtual environment shell
-CMD [“-c”, “source .venv/bin/activate && exec bash”]
+CMD ["-c", "source .venv/bin/activate && exec bash"]
 ```
 
 **Solution Dockerfile:**

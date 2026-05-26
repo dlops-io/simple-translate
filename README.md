@@ -1,6 +1,30 @@
 # Simple Translate App
 
-## Installing App on VM Manually (T1)
+A small command-line app that translates text between languages. You'll set it up several ways -
+progressing from a manual install on a cloud VM, to a virtual environment, to a containerized app -
+which introduces the core tools you'll use throughout AC215.
+
+## Prerequisites
+
+Complete **[Tutorial 0 - Setup & Installs](https://github.com/dlops-io/ac215-setup)** first. It covers
+everything this tutorial assumes: a GCP account + project, VS Code, Git, Docker Desktop, and uv.
+
+> You don't need GCP credentials (a service account) for this tutorial - that comes in a later one.
+
+---
+
+## Contents
+
+Four short walkthroughs :
+
+- [Install on a VM - manually](#installing-app-on-vm-manually)
+- [Install on a VM - with uv](#installing-app-on-vm-using-uv)
+- [Develop with containers (Docker)](#developing-app-using-containers)
+- [Run on a VM with Docker](#running-app-on-vm-using-docker)
+
+---
+
+## Installing App on VM Manually
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 * Update OS packages: `sudo apt-get update`
@@ -13,13 +37,13 @@ Test out the translations:
 * `python3 cli.py`
 * `python3 cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
 * `python3 cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`
+* Delete your VM when you're done. A running VM keeps charging even when idle. Go to [VM instances](https://console.cloud.google.com/compute/instances), select your instance, and click Delete.
 
 Refer to language codes at the bottom of this page.
 
 ---
----
 
-## Installing App on VM using UV (T2)
+## Installing App on VM using UV
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 * Update OS packages: `sudo apt-get update`
@@ -34,27 +58,18 @@ Refer to language codes at the bottom of this page.
 * `python cli.py`
 * `python cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
 * `python cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`
+* Delete your VM when you're done. A running VM keeps charging even when idle. Go to [VM instances](https://console.cloud.google.com/compute/instances), select your instance, and click Delete.
+
 
 Refer to language codes at the bottom of this page.
 
 ---
 ---
 
-## Developing App using Containers (T3)
+## Developing App using Containers
 
-### Prerequisites for Development using Containers
-
-* Have Docker Desktop installed
-* Cloned this repository to your local machine with a terminal up and running
-* Check that your Docker is running with the following command
-
-`docker run hello-world`
-
-
-### Install VSCode or IDE of choice
-
-Follow the [instructions](https://code.visualstudio.com/download) for your operating system.  
-If you already have a preferred text editor, skip this step.  
+> You set up **Docker Desktop** and **VS Code** in [Tutorial 0](https://github.com/dlops-io/ac215-setup)
+> (including the `docker run hello-world` check). Just make sure Docker Desktop is running before you start.
 
 ### Make sure we do not have any running containers and clear up an unused images
 
@@ -143,7 +158,7 @@ Run the container using:
 
 
 
-## Running App on VM using Docker (T4)
+## Running App on VM using Docker
 
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
@@ -158,6 +173,7 @@ Run the app using Docker
 Run the cli
 * `python cli.py`
 
+* Delete your VM when you're done. A running VM keeps charging even when idle. Go to [VM instances](https://console.cloud.google.com/compute/instances), select your instance, and click Delete.
 
 
 

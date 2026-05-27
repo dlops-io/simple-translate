@@ -4,6 +4,17 @@ A small command-line app that translates text between languages. You'll set it u
 progressing from a manual install on a cloud VM, to a virtual environment, to a containerized app -
 which introduces the core tools you'll use throughout AC215.
 
+## What you'll build
+
+The goal: **run this command-line app on a cloud VM**. We do it four ways, each removing a class of fragility from the one before:
+
+1. 🛠️ **Manual install on the VM.** Quick and dirty: `apt`, `pip`, run. Works, but pollutes the system Python and depends on whatever the VM happens to ship with.
+2. ⚡ **Same VM, but with `uv`.** Introduce virtual environments. Dependencies are isolated from the OS and pinned in a lock file, so the next person gets the exact same versions.
+3. 🐳 **Docker, on your laptop.** Move from "an environment on a machine" to "a portable image." Build, run, and push it to Docker Hub.
+4. ☁️ **Run the Docker image on a VM.** Pull what you just pushed and run it on a fresh VM — no source code, no `pip install`, no `apt`. Production-style deploy.
+
+By the end, the same app deploys to any VM with one command.
+
 ## Prerequisites
 
 Complete **[Tutorial 0 - Setup & Installs](https://github.com/dlops-io/ac215-setup)** first. It covers
@@ -24,7 +35,10 @@ Four short walkthroughs :
 
 ---
 
-## Installing App on VM Manually
+## 🛠️ Installing App on VM Manually
+
+_**Step 1 of 4** — the quick and dirty path. SSH into a fresh VM, install Python + pip directly into the OS, run the app. Works, but everything we install leaks into the system Python — a problem the next step fixes._
+
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 * Update OS packages: `sudo apt-get update`
@@ -51,7 +65,10 @@ Refer to language codes at the bottom of this page.
 
 ---
 
-## Installing App on VM using UV
+## ⚡ Installing App on VM using UV
+
+_**Step 2 of 4** — same VM, but isolated. We use `uv` to create a virtual environment so the app's dependencies don't touch the system Python, and `uv.lock` pins exact versions so the next person gets the same setup._
+
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
 * Update OS packages: `sudo apt-get update`
@@ -65,7 +82,15 @@ Refer to language codes at the bottom of this page.
 
 * Reload your shell or run: `source $HOME/.local/bin/env`
 * Install python environment from pyproject.toml: `uv sync`
+
+> [!TIP]
+> **What `uv sync` does:** Three things in one command — (1) reads `pyproject.toml` (and `uv.lock` if present) to figure out what packages your project needs, (2) creates a fresh `.venv/` in the project directory if it doesn't exist, (3) installs everything into that `.venv/` to match the lock file exactly. It's idempotent (safe to re-run) and ~10–100× faster than the classic `python -m venv .venv && pip install -r requirements.txt`. The next step (`source .venv/bin/activate`) is what actually puts this venv on your `PATH`.
+
 * Activate the newly created environment: `source .venv/bin/activate`
+
+> [!TIP]
+> **What `source .venv/bin/activate` does:** Four things — (1) prepends `.venv/bin/` to `PATH` so `python` and `pip` resolve to the venv's binaries, (2) sets `VIRTUAL_ENV=/path/to/.venv` so tools know which venv is active, (3) changes your shell prompt to show the venv name as a prefix (e.g. `(simple-translate) $`), and (4) defines a `deactivate` shell function so you can later run `deactivate` to undo all three. We use `source` (not `./activate`) because all of this has to happen in the *current* shell.
+
 * Test out the translations:
   * `python cli.py`
   * `python cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
@@ -78,7 +103,9 @@ Refer to language codes at the bottom of this page.
 ---
 ---
 
-## Developing App using Containers
+## 🐳 Developing App using Containers
+
+_**Step 3 of 4** — package the venv into a portable image. Build a Docker image on your laptop, run it locally, then push it to Docker Hub so any machine with Docker can pull and run it. No more "but it worked on my VM."_
 
 > You set up **Docker Desktop** and **VS Code** in [Tutorial 0](https://github.com/dlops-io/ac215-setup)
 > (including the `docker run hello-world` check). Just make sure Docker Desktop is running before you start.
@@ -91,6 +118,9 @@ Refer to language codes at the bottom of this page.
 * Run `docker image ls`
 
 ### Clone the github repository
+
+> [!NOTE]
+> If you cloned earlier on a VM, that doesn't help here — Docker Desktop runs on **your laptop**, so clone the repo locally:
 
 - Clone or download from [here](https://github.com/dlops-io/simple-translate)
 
@@ -153,7 +183,7 @@ Run the container using:
   To exit from container
 * Type `exit` from the Docker shell
 
-### Pushing Docker Image to Docker Hub
+### 📤 Pushing Docker Image to Docker Hub
 
 * Sign up in Docker Hub and create an [Access Token](https://hub.docker.com/settings/security)
 * Login to the Hub: `docker login -u <USER NAME> -p <ACCESS TOKEN>`
@@ -170,7 +200,9 @@ Run the container using:
 
 
 
-## Running App on VM using Docker
+## ☁️ Running App on VM using Docker
+
+_**Step 4 of 4** — the production-style deploy. Spin up a fresh VM that has only Docker installed (no Python, no source code), pull the image you pushed in step 3, and run it. This is how real services get deployed._
 
 * Create a VM Instance from [GCP](https://console.cloud.google.com/compute/instances)
 * SSH into your newly created instance
@@ -254,9 +286,3 @@ Run the cli
 <tr><td>58</td><td>Yiddish</td><td><code>ייִדיש</code></td><td><code>yi</code></td></tr>
 </tbody>
 </table>
-
-
-
-## Accessing files from GCS Bucket
-* You can download a file from GCS using `[https://storage.googleapis.com/ac215-test-bucket/tips.txt](https://storage.googleapis.com/ac215-test-bucket/tip.txt)` (path of file in GCS)
-* You can upload a file to GCS using `curl --upload-file tips2.txt https://storage.googleapis.com/ac215-test-bucket/` (provided you have write access)

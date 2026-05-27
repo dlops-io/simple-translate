@@ -29,14 +29,22 @@ Four short walkthroughs :
 * SSH into your newly created instance
 * Update OS packages: `sudo apt-get update`
 * Install Git: `sudo apt install git`
+
+> [!TIP]
+> **`apt-get` vs `apt`:** Both manage Debian packages. `apt-get` is the older, stable, scriptable interface — predictable output, used in Dockerfiles and CI (we'll cover CI in a later lecture). `apt` is a friendlier wrapper for interactive use (progress bars, colors). Prefer `apt-get` in scripts; either is fine on a VM shell like this one.
+
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`
 * Install Python PIP: `sudo apt install python3-pip`
-* Install packages: `pip3 install --break-system-packages googletrans==4.0.0rc1 art` (The --break-system-packages option is to allow us to install packages to the base python in the OS)
-Test out the translations:
-* `python3 cli.py`
-* `python3 cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
-* `python3 cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`
+* Install packages: `pip3 install --break-system-packages googletrans==4.0.0rc1 art`
+
+> [!TIP]
+> **`--break-system-packages`:** Modern Debian/Ubuntu mark the system Python as "externally managed" (PEP 668), so `pip` refuses to install into it by default. The `--break-system-packages` flag overrides that check and installs into the OS Python anyway. We use it here because we haven't introduced virtual environments yet — the next walkthrough fixes this by using `uv` instead.
+
+* Test out the translations:
+  * `python3 cli.py`
+  * `python3 cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
+  * `python3 cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`
 * Delete your VM when you're done. A running VM keeps charging even when idle. Go to [VM instances](https://console.cloud.google.com/compute/instances), select your instance, and click Delete.
 
 Refer to language codes at the bottom of this page.
@@ -51,13 +59,17 @@ Refer to language codes at the bottom of this page.
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`
 * Install uv: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+
+> [!TIP]
+> **Other ways to install uv:** If you already have `pip` on the VM, you can also run `pip install uv --break-system-packages` (same PEP 668 caveat as before). On macOS locally, `brew install uv` works. The curl line above is the simplest because it doesn't need anything pre-installed — see [Astral's docs](https://docs.astral.sh/uv/getting-started/installation/) for the full list.
+
 * Reload your shell or run: `source $HOME/.local/bin/env`
 * Install python environment from pyproject.toml: `uv sync`
 * Activate the newly created environment: `source .venv/bin/activate`
 * Test out the translations:
-* `python cli.py`
-* `python cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
-* `python cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`
+  * `python cli.py`
+  * `python cli.py -t "Good morning. It is a good morning for cheese." -s "en" -d "es"`
+  * `python cli.py -t "Good afternoon. Would you like some cheese?" -s "en" -d "fr"`
 * Delete your VM when you're done. A running VM keeps charging even when idle. Go to [VM instances](https://console.cloud.google.com/compute/instances), select your instance, and click Delete.
 
 

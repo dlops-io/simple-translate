@@ -1,49 +1,65 @@
 """
-Module that contains the command line app.
+Command-line translation app.
 """
+
 import argparse
-from googletrans import Translator
+import asyncio
+
 from art import text2art
-
-# Generate the inputs arguments parser
-parser = argparse.ArgumentParser(description="Command description.")
-
-translator = Translator()
+from googletrans import Translator
 
 
-def main(args=None):
+async def main(args):
     print("\n")
-    art = text2art("AC215")
-    print(art)
-    print("\n")
-    print("Arguments:", args)
+    print(text2art("AC215"))
+    print("\nArguments:", args)
+
     text = args.text
 
-    if args.file != "":
-        # read file
-        with open(args.file) as f:
-            text = f.read()
+    if args.file:
+        with open(args.file, encoding="utf-8") as file:
+            text = file.read()
 
-    print("\n\n")
-    print("Input:", text)
+    print("\nInput:", text)
 
-    results = translator.translate(text, src=args.src, dest=args.dest)
+    async with Translator() as translator:
+        result = await translator.translate(
+            text,
+            src=args.src,
+            dest=args.dest,
+        )
 
-    print("Output:", results.text)
+    print("Output:", result.text)
 
 
 if __name__ == "__main__":
-    # Generate the inputs arguments parser
-    # if you type into the terminal 'python cli.py --help', it will provide the description
     parser = argparse.ArgumentParser(description="A simple translation app")
 
     parser.add_argument(
-        "-t", "--text", type=str, default="I love cheese", help="Text to translate"
+        "-t",
+        "--text",
+        type=str,
+        default="I love cheese",
+        help="Text to translate",
     )
-    parser.add_argument("-f", "--file", type=str, default="", help="File to translate")
-    parser.add_argument("-s", "--src", default="en", help="Source Language")
-    parser.add_argument("-d", "--dest", default="it", help="Destination Language")
+    parser.add_argument(
+        "-f",
+        "--file",
+        type=str,
+        default="",
+        help="File to translate",
+    )
+    parser.add_argument(
+        "-s",
+        "--src",
+        default="en",
+        help="Source language",
+    )
+    parser.add_argument(
+        "-d",
+        "--dest",
+        default="it",
+        help="Destination language",
+    )
 
-    args = parser.parse_args()
-
-    main(args)
+    asyncio.run(main(parser.parse_args()))

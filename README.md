@@ -50,10 +50,10 @@ _**Step 1 of 4** — the quick and dirty path. SSH into a fresh VM, install Pyth
 * Clone App Repo: `git clone https://github.com/dlops-io/simple-translate.git`
 * `cd simple-translate`
 * Install Python PIP: `sudo apt install python3-pip`
-* Install packages: `sudo pip3 install --break-system-packages googletrans==4.0.0rc1 art`
-
+* Install packages: `sudo pip3 install --break-system-packages googletrans==4.0.2 art`
+ 
 > [!TIP]
-> **`--break-system-packages`:** Modern Debian/Ubuntu mark the system Python as "externally managed" (PEP 668), so `pip` refuses to install into it by default. The `--break-system-packages` flag overrides that check and installs into the OS Python anyway. We use it here because we haven't introduced virtual environments yet — the next walkthrough fixes this by using `uv` instead.
+> **`--break-system-packages`:** Modern Debian and Ubuntu treat their system Python as externally managed: its packages are maintained by the operating system through apt. By default, pip refuses to modify it. --break-system-packages overrides that protection. We use it here deliberately as a quick demonstration; the next walkthrough uses uv to keep project packages isolated.
 
 * Test out the translations:
   * `python3 cli.py`
